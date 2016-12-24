@@ -75,6 +75,7 @@ BloodTransfusionRules = {
           return abNegRec[i];
         }
       }
+      return false;
     }
 
     if(patient.blood_type === BloodType.A_POS){
