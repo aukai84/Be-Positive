@@ -147,8 +147,6 @@ BloodTransfusionRules = {
     }
 
     if(patient.blood_type === BloodType.O_NEG){
-      let maxValue = 0;
-      let maxBlood = false;
       for(let i = 0; i < oNegRec.length; i++){
         if(blood_inventory[oNegRec[i]] > 0){
           if(maxValue < blood_inventory[oNegRec[i]]){
@@ -157,7 +155,7 @@ BloodTransfusionRules = {
           }
         }
       }
-      return false;
+      return maxBlood;
     }
 
     if(patient.blood_type === BloodType.O_POS){
