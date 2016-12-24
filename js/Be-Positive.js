@@ -95,9 +95,9 @@ BloodTransfusionRules = {
       let maxBlood = false;
       for(let i = 0; i < aPosRec.length; i++){
         if(blood_inventory[aPosRec[i]] > 0){
-          if(maxValue < blood_inventory[abNegRec[i]]){
-            maxValue = blood_inventory[abNegRec[i]];
-            maxBlood = abNegRec[i];
+          if(maxValue < blood_inventory[aPosRec[i]]){
+            maxValue = blood_inventory[aPosRec[i]];
+            maxBlood = aPosRec[i];
           }
         }
       }
