@@ -66,9 +66,11 @@ BloodTransfusionRules = {
       let maxValue = 0;
       let maxBlood = false;
       for(let i = 0; i < abPosRec.length; i++){
-        if(blood_inventory[abPosRec[i]] > maxValue){
-          maxValue = blood_inventory[abPosRec[i]];
-          maxBlood = abPosRec[i];
+        if(blood_inventory[abPosRec[i]] > 0){
+         if(maxValue < blood_inventory[abPosRec[i]]){
+            maxValue = blood_inventory[abPosRec[i]];
+            maxBlood = abPosRec[i];
+          }
         }
       }
       return maxBlood;
@@ -79,20 +81,27 @@ BloodTransfusionRules = {
       let maxBlood = false;
       for(let i = 0; i < abNegRec.length; i++){
         if(blood_inventory[abNegRec[i]] > 0){
-          maxValue = blood_inventory[abNegRec[i]];
-          maxBlood = abNegRec[i];
+          if(maxValue < blood_inventory[abNegRec[i]]){
+            maxValue = blood_inventory[abNegRec[i]];
+            maxBlood = abNegRec[i];
+          }
         }
       }
       return maxBlood;
     }
 
     if(patient.blood_type === BloodType.A_POS){
+      let maxValue = 0;
+      let maxBlood = false;
       for(let i = 0; i < aPosRec.length; i++){
         if(blood_inventory[aPosRec[i]] > 0){
-          return aPosRec[i];
+          if(maxValue < blood_inventory[abNegRec[i]]){
+            maxValue = blood_inventory[abNegRec[i]];
+            maxBlood = abNegRec[i];
+          }
         }
       }
-      return false;
+      return maxBlood;
     }
 
     if(patient.blood_type === BloodType.A_NEG){
@@ -100,8 +109,10 @@ BloodTransfusionRules = {
       let maxBlood = false;
       for(let i = 0; i < aNegRec.length; i++){
         if(blood_inventory[aNegRec[i]] > 0){
-          maxValue = blood_inventory[abNegRec[i]];
-          maxBlood = aNegRec[i];
+          if(maxValue < blood_inventory[aNegRec[i]]){
+            maxValue = blood_inventory[aNegRec[i]];
+            maxBlood = aNegRec[i];
+          }
         }
       }
       return maxBlood;
@@ -112,8 +123,10 @@ BloodTransfusionRules = {
       let maxBlood = false;
       for(let i = 0; i < bPosRec.length; i++){
         if(blood_inventory[bPosRec[i]] > 0){
-          maxValue = blood_inventory[bPosRec[i]];
-          maxBlood = bPosRec[i];
+          if(maxValue < blood_inventory[bPosRec[i]]){
+            maxValue = blood_inventory[bPosRec[i]];
+            maxBlood = bPosRec[i];
+          }
         }
       }
       return maxBlood;
@@ -124,8 +137,10 @@ BloodTransfusionRules = {
       let maxBlood = false;
       for(let i = 0; i < bNegRec.length; i++){
         if(blood_inventory[bNegRec[i]] > 0){
-          maxValue = blood_inventory[bNegRec[i]];
-          maxBlood = bNegRec[i];
+          if(maxValue < blood_inventory[bNegRec[i]]){
+            maxValue = blood_inventory[bNegRec[i]];
+            maxBlood = bNegRec[i];
+          }
         }
       }
       return maxBlood;
@@ -136,8 +151,10 @@ BloodTransfusionRules = {
       let maxBlood = false;
       for(let i = 0; i < oNegRec.length; i++){
         if(blood_inventory[oNegRec[i]] > 0){
-          maxValue = blood_inventory[oNegRec[i]];
-          maxBlood = oNegRec[i];
+          if(maxValue < blood_inventory[oNegRec[i]]){
+            maxValue = blood_inventory[oNegRec[i]];
+            maxBlood = oNegRec[i];
+          }
         }
       }
       return false;
@@ -148,8 +165,10 @@ BloodTransfusionRules = {
       let maxBlood = false;
       for(let i = 0; i < oPosRec.length; i++){
         if(blood_inventory[oPosRec[i]] > 0){
-          maxValue = blood_inventory[oPosRec[i]];
-          maxBlood = oPosRec[i];
+          if(maxValue < blood_inventory[oPosRec[i]]){
+            maxValue = blood_inventory[oPosRec[i]];
+            maxBlood = oPosRec[i];
+          }
         }
       }
       return maxBlood;
